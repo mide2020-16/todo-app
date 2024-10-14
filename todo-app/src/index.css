@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables */
+:root {
+  --pry-clr-brg-blue: hsl(220, 98%, 61%);
+  --pry-clr-chk-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --neu-lgt-gray: hsl(0, 0%, 98%);
+  --neu-vlgt-grayish-blue: hsl(236, 33%, 92%);
+  --neu-drk-grayish-blue: hsl(236, 9%, 61%);
+  --vdrk-blue: hsl(235, 21%, 11%);
+  --vdrk-dst-blue: hsl(235, 24%, 19%);
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--neu-lgt-gray);
+}
+
+/* Icon Pointer */
+i {
+  cursor: pointer;
+}
+
+/* Custom Checkbox Styles */
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--neu-drk-grayish-blue);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-checkbox:hover {
+  border-color: var(--pry-clr-brg-blue);
+}
+
+.custom-checkbox.checked {
+  background: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  border-color: transparent;
+}
+
+.checkmark {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-checkbox.checked .checkmark {
+  transform: scale(1);
+}
+
+
+/* Input Styling */
+input {
+  background-color: transparent;
+}
+
+input::placeholder {
+  color: var(--neu-lgt-grayish-blue);
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+input::-ms-check {
+  background: var(--pry-clr-chk-bg);
+  border-radius: 50px;
+  border: none;
+}
+
+/* Horizontal Divider */
+.hr {
+  border-bottom: 1px solid var(--neu-vlgt-grayish-blue);
+}
