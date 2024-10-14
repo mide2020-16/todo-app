@@ -6,6 +6,11 @@ import TodoApp from './TodoApp';
 const App = () => {
   const [dark, setDark] = useState(true);
 
+  // Save theme to localStorage on change
+  useEffect(() => {
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }, [dark]);
+  
   // Load theme from localStorage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -14,10 +19,6 @@ const App = () => {
     }
   }, []);
 
-  // Save theme to localStorage on change
-  useEffect(() => {
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-  }, [dark]);
 
   const toggleMode = (e) => {
     e.preventDefault();
@@ -52,7 +53,11 @@ const App = () => {
         <TodoApp dark={dark} />
 
         {/* Footer */}
-        <p className="text-gray-500 mt-4">Drag and drop to reorder list</p>
+        <footer className={`${dark ? 'bg-[var(--clr-black)]' : 'bg-[var(--clr-bg-white)]'} text-center text-base ${dark ? 'text-white' : 'text-black'} p-4 rounded-lg`}>
+
+          <p>Challenge by <a href="https://www.frontendmentor.io/" target="_blank" rel="noopener noreferrer" className='text-purple-400 font-bold decoration-wavy transition-colors duration-300 hover:decoration-wavy'>Frontend Mentor</a>.</p>
+          <p>Coded by <a href="https://x.com/westfiree" className='text-purple-400 font-bold decoration-wavy transition-colors duration-300 hover:decoration-wavy'>Efuwape Ayomide</a>.</p>
+        </footer>
       </div>
     </div>
   );

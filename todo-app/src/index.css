@@ -20,6 +20,8 @@
   --neu-drk-grayish-blue: hsl(236, 9%, 61%);
   --vdrk-blue: hsl(235, 21%, 11%);
   --vdrk-dst-blue: hsl(235, 24%, 19%);
+  --clr-bg-white: hsl(0, 0%, 96.1%);
+  --clr-black: hsl(0, 0%, 7%);
 }
 
 body {
